@@ -11,20 +11,6 @@ variable "rg_location" {
   default     = "northeurope"
 }
 
-// Storage account variables
-variable "sa_name" {
-  type        = string
-  description = "Name of the storage account"
-  default     = "sadatafriends"
-}
-
-// Storage container variables
-variable "sc_name" {
-  type        = string
-  description = "Name of the storage container"
-  default     = "data"
-}
-
 // Databricks variables
 variable "db_name" {
   type        = string
@@ -36,4 +22,21 @@ variable "db_sku" {
   type        = string
   description = ""
   default     = "trial"
+}
+
+// DataBricks variables
+variable "sas_token" {
+  type        = string
+  description = ""
+  sensitive   = true
+}
+
+variable "container_name" {
+  type        = string
+  description = "Name of the storage container"
+}
+
+variable "storage_account_name" {
+  type        = string
+  description = "Name of the storage account"
 }
