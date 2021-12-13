@@ -21,18 +21,18 @@ locals {
   }
 }
 
-resource "azurerm_resource_group" "main" {
+resource "azurerm_resource_group" "this" {
   location = var.rg_location
   name     = var.rg_name
 
   tags = local.tags
 }
 
-resource "azurerm_databricks_workspace" "main" {
+resource "azurerm_databricks_workspace" "this" {
   name = var.db_name
 
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
+  resource_group_name = azurerm_resource_group.this.name
+  location            = azurerm_resource_group.this.location
 
   sku = var.db_sku
 
@@ -40,7 +40,7 @@ resource "azurerm_databricks_workspace" "main" {
 }
 
 provider "databricks" {
-  host = azurerm_databricks_workspace.main.workspace_url
+  host = azurerm_databricks_workspace.this.workspace_url
 }
 
 data "databricks_spark_version" "lts" {
