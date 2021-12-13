@@ -69,3 +69,4 @@ terraform.rc
 
 # Custom
 .idea
+.venv
