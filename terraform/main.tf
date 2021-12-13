@@ -50,9 +50,9 @@ data "databricks_spark_version" "lts" {
 }
 
 data "databricks_node_type" "standard_node" {
-  min_cores     = 4
-  min_memory_gb = 14
-  category      = "General Purpose"
+  min_cores     = var.db_node_min_cpu
+  min_memory_gb = var.db_node_min_mem
+  category      = var.db_node_category
 }
 
 resource "databricks_cluster" "this" {

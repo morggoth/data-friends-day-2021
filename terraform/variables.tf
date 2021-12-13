@@ -40,3 +40,21 @@ variable "storage_account_name" {
   type        = string
   description = "Name of the storage account"
 }
+
+variable "db_node_min_cpu" {
+  type        = number
+  description = ""
+  default     = 4
+}
+
+variable "db_node_min_mem" {
+  type        = number
+  description = ""
+  default     = 14
+}
+
+variable "db_node_category" {
+  type        = string
+  description = ""
+  default     = "General Purpose"
+}
