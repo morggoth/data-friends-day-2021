@@ -20,14 +20,14 @@ variable "db_name" {
 
 variable "db_sku" {
   type        = string
-  description = ""
+  description = "Pricing Tier for the cluster"
   default     = "trial"
 }
 
-// DataBricks variables
+// Storage variables
 variable "sas_token" {
   type        = string
-  description = ""
+  description = "The token required to access the storage"
   sensitive   = true
 }
 
@@ -43,18 +43,18 @@ variable "storage_account_name" {
 
 variable "db_node_min_cpu" {
   type        = number
-  description = ""
+  description = "The minimum number of CPU cores for a cluster node"
   default     = 4
 }
 
 variable "db_node_min_mem" {
   type        = number
-  description = ""
+  description = "The minimum amount of RAM in GBs for a cluster node"
   default     = 14
 }
 
 variable "db_node_category" {
   type        = string
-  description = ""
+  description = "Type of a node to the cluster"
   default     = "General Purpose"
 }
