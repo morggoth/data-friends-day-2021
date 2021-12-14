@@ -1,23 +1,6 @@
 # This file is maintained automatically by "terraform init".
 # Manual edits may be lost in future updates.
 
-provider "registry.terraform.io/databrickslabs/databricks" {
-  version     = "0.4.0"
-  constraints = "0.4.0"
-  hashes = [
-    "h1:QS7/qWOOJXY8wHuGUvs53EPLRSdNJ/MqUjHf9RFToAo=",
-    "zh:0340b2485a045605701756e2bd3dcab979be5733537401c96135d864cf1043c2",
-    "zh:0a635626ada977f182e9a6847d74671121ddd26f073d2283537f994eed5badc5",
-    "zh:283d87b16efeed1d3ab64bbf8a1aa0505b9098ff218024545586d2c900dae640",
-    "zh:3a842a577155678f49ada2e10b376ba494f9dd7cd54f12eb1c78abaf3a4bc9e6",
-    "zh:5c20eeaa1a7d6975647803575234e4868cdfa481c5567c0a435efa1f1dbb13c9",
-    "zh:6733bc6cd8488e216532874ab8d3993861bd46e21ca8cd35a4a1796e0804d485",
-    "zh:728c2bf415c795f00140652278c068ce4724279760c4856dce37d4dc35c3ee8c",
-    "zh:8564c02ea7d7ef893edb09ba6cdde127100d4cf85e46491fa1216c8078831044",
-    "zh:c227c6640dd99b326dc687f8811361118138c08329b98c5dffb23299d33f5769",
-  ]
-}
-
 provider "registry.terraform.io/hashicorp/azurerm" {
   version     = "2.89.0"
   constraints = "2.89.0"

@@ -1,9 +1,5 @@
 terraform {
   required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "2.89.0"
-    }
     databricks = {
       source  = "databrickslabs/databricks"
       version = "0.4.0"
@@ -15,38 +11,12 @@ provider "azurerm" {
   features {}
 }
 
-locals {
-  tags = {
-    env = "dfd-2021"
-  }
-}
-
-resource "azurerm_resource_group" "main" {
-  location = var.rg_location
-  name     = var.rg_name
-
-  tags = local.tags
-}
-
-resource "azurerm_databricks_workspace" "main" {
-  name = var.db_name
-
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-
-  sku = var.db_sku
-
-  tags = local.tags
-}
-
 provider "databricks" {
-  host = azurerm_databricks_workspace.main.workspace_url
+  host = var.db_workspace_url
 }
 
 data "databricks_spark_version" "lts" {
   long_term_support = true
-
-  //  depends_on = [azurerm_databricks_workspace.main]
 }
 
 data "databricks_node_type" "standard_node" {
