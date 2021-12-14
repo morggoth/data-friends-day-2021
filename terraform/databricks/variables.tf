@@ -1,27 +1,13 @@
-// Resource group variables
-variable "rg_name" {
+// Databricks workspace variables
+variable "db_workspace_url" {
   type        = string
-  description = "Name of the main resource group"
-  default     = "datafriends"
+  description = "The URL of the Databricks workspace in the Azure"
 }
 
-variable "rg_location" {
-  type        = string
-  description = "Location of the main resource group"
-  default     = "northeurope"
-}
-
-// Databricks variables
 variable "db_name" {
   type        = string
   description = "Name of the Databricks workspace"
   default     = "dbdatafriends"
-}
-
-variable "db_sku" {
-  type        = string
-  description = "Pricing Tier for the cluster"
-  default     = "trial"
 }
 
 // Storage variables
